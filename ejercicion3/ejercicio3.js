@@ -2,9 +2,24 @@
 // división, si el divisor es cero el programa debe mostrar un error, se debe manejar
 // mediante excepciones y el mensaje debe ser personalizado.
 
-let numero1 = parseInt(prompt("ingrese el primer numero"));
-let numero2= parseInt(prompt("ingrese el primer numero"));
-
-function dividir(){
+try {
     
+    let dividendo = parseFloat(prompt("Ingrese el dividendo (número a dividir):"));
+
+    
+    let divisor = parseFloat(prompt("Ingrese el divisor (número por el cual dividir):"));
+
+    
+    if (divisor === 0) {
+        throw new Error("No se puede dividir entre cero, ingrese un divisor válido."); //error personalizado
+    }
+
+    
+    let resultado = dividendo / divisor;
+
+    
+    alert(`El resultado de la división es: ${resultado}`);
+} catch (error) {
+    
+    alert(`Error: ${error.message}`);
 }
